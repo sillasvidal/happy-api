@@ -36,7 +36,7 @@ export class createImages1602695944299 implements MigrationInterface {
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.dropTable('images');
+    await queryRunner.dropTable("images");
   }
 
 }

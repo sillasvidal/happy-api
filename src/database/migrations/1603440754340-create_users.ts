@@ -23,7 +23,7 @@ export class createUsers1603440754340 implements MigrationInterface {
                     type: 'varchar'
                 },
                 {
-                    name: 'password_hash',
+                    name: 'password',
                     type: 'varchar'
                 }
             ]
@@ -31,7 +31,7 @@ export class createUsers1603440754340 implements MigrationInterface {
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
-        queryRunner.dropTable('users');
+        queryRunner.dropTable("users");
     }
 
 }
