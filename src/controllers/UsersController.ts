@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { Any, getRepository } from 'typeorm';
+import { getRepository } from 'typeorm';
 import * as Yup from 'yup';
 
 import bcrypt from 'bcryptjs';

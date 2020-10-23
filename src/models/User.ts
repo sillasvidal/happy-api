@@ -1,4 +1,6 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm'
+import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import jwt from 'jsonwebtoken';
+import bcrypt from 'bcryptjs';
 
 @Entity('users')
 
@@ -14,4 +16,14 @@ export default class User {
 
     @Column()
     password: string;
+
+    generateToken() {
+        return jwt.sign({ id: this.id}, "secret", {
+            expiresIn: 86400
+        });
+    }
+
+    cripPassword() {
+        return bcrypt.hashSync(this.password, 8);
+    }
 }
